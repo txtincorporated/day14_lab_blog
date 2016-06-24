@@ -118,7 +118,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-  //ANSWER: Shows #articles section and hides its sibling els; removes <article> element from this section and replaces it with content rendered from each entry in articles table of DB
+  //ANSWER: Shows #articles section and hides its sibling els; removes <article> element from this section and replaces it with marked-up content passed by render function to matching fields in  compiled article template from each entry in articles table of DB
   articleView.index = function(articles) {
     $('#articles').show().siblings().hide();
 

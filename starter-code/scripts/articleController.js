@@ -25,11 +25,11 @@
       ctx.articles = articlesByAuthor;
       next();
     };
-
+//ANSWER (Question 2 pt. 1): calls the global findWhere() function defined in article.js:94, passes it the author field for param 1, value found in that field corrected for format for param 2, and function authorData for the function param, passing it the list of values from param 2 as a filter for articles by the value found in the current row at column 'author' as set in param 1
     Article.findWhere('author', ctx.params.authorName.replace('+', ' '), authorData);
   };
 
-  // COMMENT: What does this method do?  What is it's execution path?
+  //COMMENT: What does this method do?  What is it's execution path?
   //ANSWER: Identical to loadByAuthor except keys off of article's category property rather than author prop.
   articlesController.loadByCategory = function(ctx, next) {
     var categoryData = function(articlesInCategory) {

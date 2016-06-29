@@ -14,12 +14,11 @@
   };
 //Defines repoView.index as function that appends remotely fetched repos filtered by whether forked or not
   repoView.index = function() {
-    ui();
+    ui();//let $about = section#about
 
-    $('#about ul').append(
-      repos.with('forks_count').map(render)//Supplies attr set as parameter in repo.js:14
-    );
-  };
-//IIFE export
-  module.repoView = repoView;
-})(window);
+    $('#about ul').append(//add to ul elems. in section#about...
+      repos.with('forks_count').map(render)//...attr set as parameter in repo.js:14
+    );//Close args. for append();
+  };//Close fn. repoView.index
+  module.repoView = repoView;//Export var repoView to global context
+})(window);//Close IIFE

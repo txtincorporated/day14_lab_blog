@@ -13,6 +13,8 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  //ANSWER: This method compiles a handlebars template from script `#option-template` and then populates to that template from the author objects attached to each article object in the `Article.all` array before appending the resulting string to the DOM at select-element `#author-filter`. It contrasts with the immediately following code-block despite their functional scopes' being formally identical in that this function builds a data array in the session that it traverses using `.map()` to populate each article-object's author property into the DOM as an instance of the handlebars `#option-template` template script, in distinction to the other method's asynchronous approach.
+
   articleView.populateFilters = function() {
     var options,
       template = Handlebars.compile($('#option-template').text());
@@ -38,6 +40,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  //ANSWER:  This method sets a multipronged event listener on section `#filters` which its child selector-elements inherit such that when any change occurs in the section or when a select event occurs with the section as a target 
   articleView.handleFilters = function() {
     $('#filters').on('change', 'select', function() {
       resource = this.id.replace('-filter', '');
